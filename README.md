@@ -1,2 +1,27 @@
-# Led-Clock
-Only in Pc / Mac
+# Led-Clock 
+# Only Pc / Mac 
+
+
+# Install
+```
+apt update
+```
+
+```
+apt upgrade -y 
+```
+
+``` 
+apt install git -y 
+```
+
+``` 
+git clone  
+```
+
+
+```  
+cd Led-Clock
+```
+
+```
