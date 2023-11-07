@@ -1,0 +1,32 @@
+import time
+
+# Define LED segments for each digit (0-9)
+led_segments = {
+    0: '###\n# #\n# #\n# #\n###',
+    1: '  #\n  #\n  #\n  #\n  #',
+    2: '###\n  #\n###\n#  \n###',
+    3: '###\n  #\n###\n  #\n###',
+    4: '# #\n# #\n###\n  #\n  #',
+    5: '###\n#  \n###\n  #\n###',
+    6: '###\n#  \n###\n# #\n###',
+    7: '###\n  #\n  #\n  #\n  #',
+    8: '###\n# #\n###\n# #\n###',
+    9: '###\n# #\n###\n  #\n###',
+    ':': '\n\n# #\n\n# #',
+}
+
+def display_time():
+    while True:
+        current_time = time.strftime("%H:%M:%S")
+        led_time = ''
+        for char in current_time:
+            if char == ':':
+                led_time += led_segments[char] + '  '
+            else:
+                led_time += led_segments[int(char)] + '  '
+        print(led_time)
+        time.sleep(1)
+        print('\x1b[H', end='')
+
+if __name__ == "__main__":
+    display_time()
